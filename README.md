@@ -110,5 +110,6 @@ Runs all the currently connected functions with the given arguments.
 <br><br>
 
 <h2>
-    <b></b>
+    <b>Example</b>
 </h2>
+Run the `example.py` file included with this repo using Python 3.
