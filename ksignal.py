@@ -1,4 +1,4 @@
-class kSignal():
+class ksignal():
     def __init__(self):
         self.functions = []
     
@@ -34,8 +34,19 @@ class kSignal():
             return len(self.functions) - 1
     
     def disconnect(self, i):
-        if i < len(self.functions):
-            self.functions[i] = None
+        if type(i) == list:
+            for index in i:
+                if index < len(self.functions):
+                    self.functions[index] = None
+        else:
+            if i < len(self.functions):
+                self.functions[i] = None
+    
+    def disconnect_all(self):
+        self.functions = []
+    
+    def get_connected(self):
+        return self.functions
 
     def fire(self, *args):
         for f in self.functions:
