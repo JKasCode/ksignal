@@ -25,14 +25,8 @@ Disconnects the stored function of the given index/s. Index/s is given in the re
 A single integer or a list of integers can be given to disconnect multiple connections at once.
 <br><br>
 
-
-### `ksignal.disconnect_all()`<br>` -> returns None`
+### `ksignal.reset()`<br>` -> returns None`
 Disconnects all connected functions and resets the stored function list.
-<br><br>
-
-### `ksignal.get_connected()`<br>` -> returns list connections`
-Returns all connected functions in a list. Any `None` values are connections that were disconnected.
-Same list can also be accessed with the `ksignal.functions` value.
 <br><br>
 
 ### `ksignal.fire( tuple arguments )`<br>` -> returns None`

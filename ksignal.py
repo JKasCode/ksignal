@@ -42,11 +42,8 @@ class ksignal():
             if i < len(self.functions):
                 self.functions[i] = None
     
-    def disconnect_all(self):
+    def reset(self):
         self.functions = []
-    
-    def get_connected(self):
-        return self.functions
 
     def fire(self, *args):
         for f in self.functions:

@@ -28,6 +28,7 @@ example.connect(demof2) #connect new function by itself
 print("\nFiring third time")
 example.fire(12, 2) #run currently connected functions
 
+example.reset() #disconnect all functions
+
 print("\nFiring fourth time")
-example.disconnect_all() #disconnect all functions
 example.fire() #run all functions (currently none)
