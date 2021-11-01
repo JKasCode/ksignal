@@ -2,50 +2,50 @@ class ksignal():
     def __init__(self):
         self.functions = []
     
-    def connect(self, f):
-        if type(f) == list:
+    def connect(self, functions):
+        if type(functions) == list:
             indices = []
             full = False
             
-            for a in f:
+            for function in functions:
                 if not full:
-                    for i,val in enumerate(self.functions):
+                    for index,val in enumerate(self.functions):
                         if val == None:
-                            self.functions[i] = a
-                            indices.append(i)
+                            self.functions[index] = function
+                            indices.append(index)
                             break
                     else:
                         full = True
-                        self.functions.append(a)
+                        self.functions.append(function)
                         indices.append(len(self.functions) - 1)
                 else:
-                    self.functions.append(a)
+                    self.functions.append(function)
                     indices.append(len(self.functions) - 1)
             
             return indices
                 
         else:
-            for i,val in enumerate(self.functions):
+            for index,val in enumerate(self.functions):
                 if val == None:
-                    self.functions[i] = f
-                    return i
+                    self.functions[index] = functions
+                    return index
 
-            self.functions.append(f)
+            self.functions.append(functions)
             return len(self.functions) - 1
     
-    def disconnect(self, i):
-        if type(i) == list:
-            for index in i:
+    def disconnect(self, index):
+        if type(index) == list:
+            for index in index:
                 if index < len(self.functions):
                     self.functions[index] = None
         else:
-            if i < len(self.functions):
-                self.functions[i] = None
+            if index < len(self.functions):
+                self.functions[index] = None
     
     def reset(self):
         self.functions = []
 
     def fire(self, *args):
-        for f in self.functions:
-            if f != None:
-                f(*args)
+        for function in self.functions:
+            if function != None:
+                function(*args)
