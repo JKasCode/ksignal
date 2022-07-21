@@ -13,7 +13,7 @@
 3. Create a new `ksignal` object and add it to a variable with `ksignal.ksignal()`
 <br><br>
 
-## **API**
+## **Functions**
 
 ### `ksignal.connect( variant function )`<br>` -> returns variant`
 Connect one or more functions to the ksignal class, returning the new connection index/s.<br>
